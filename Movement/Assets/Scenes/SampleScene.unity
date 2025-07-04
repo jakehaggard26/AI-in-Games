@@ -313,6 +313,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1471603621 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1912044464680193950, guid: 451817adde2d5644daa5e5cfc97b72fa, type: 3}
+  m_PrefabInstance: {fileID: 7705754012193826816}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1471603628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471603621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66d71c14e1e4b5d4b9a4420c19b920b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3916991305526508228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -323,7 +340,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 464294353973886481, guid: 37ab6ac8ba594ed41bad7cad6c365135, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.29
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 464294353973886481, guid: 37ab6ac8ba594ed41bad7cad6c365135, type: 3}
       propertyPath: m_LocalPosition.y
@@ -331,7 +348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 464294353973886481, guid: 37ab6ac8ba594ed41bad7cad6c365135, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.19
+      value: 8.7
       objectReference: {fileID: 0}
     - target: {fileID: 464294353973886481, guid: 37ab6ac8ba594ed41bad7cad6c365135, type: 3}
       propertyPath: m_LocalRotation.w
@@ -445,7 +462,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11337247644775815, guid: 451817adde2d5644daa5e5cfc97b72fa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -37.1
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 11337247644775815, guid: 451817adde2d5644daa5e5cfc97b72fa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -498,7 +515,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1912044464680193950, guid: 451817adde2d5644daa5e5cfc97b72fa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1471603628}
   m_SourcePrefab: {fileID: 100100000, guid: 451817adde2d5644daa5e5cfc97b72fa, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

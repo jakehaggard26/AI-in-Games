@@ -3,6 +3,9 @@ using UnityEngine;
 public class AgentController : MonoBehaviour
 {
 
+    
+    
+
     [SerializeField] private Transform target;
     [SerializeField] private float speed;
     [SerializeField] private float rotationSpeed;
@@ -38,6 +41,11 @@ public class AgentController : MonoBehaviour
     public Rigidbody Rigidbody
     {
         get { return this.rb; }
+    }
+
+    public MovementAlgorithm MovementAlgorithm
+    {
+        get { return this.movementAlgorithm; }
     }
     #endregion
 

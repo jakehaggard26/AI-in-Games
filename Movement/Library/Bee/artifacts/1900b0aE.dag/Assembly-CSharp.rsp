@@ -354,6 +354,7 @@
 -analyzer:"D:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"D:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/Agent/AgentController.cs"
+"Assets/Scripts/Agent/AgentController_Editor.cs"
 "Assets/Scripts/Movement/Kinematic Movement Algorithms/KinematicFlee.cs"
 "Assets/Scripts/Movement/Kinematic Movement Algorithms/KinematicSeek.cs"
 "Assets/Scripts/Movement/Kinematic Movement Algorithms/MovementAlgorithm.cs"
