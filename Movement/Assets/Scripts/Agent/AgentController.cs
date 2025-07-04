@@ -69,14 +69,15 @@ public class AgentController : MonoBehaviour
         rb = this.GetComponent<Rigidbody>();
         kinematic = this.GetComponent<Kinematic>();
 
-        movementAlgorithm = new KinematicArrival(this.transform);
+        movementAlgorithm = new KinematicWander(this.transform);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-
-        steeringOutput = movementAlgorithm.getSteering(target, this.transform);
+        steeringOutput = movementAlgorithm.getSteering(this.transform);
+        
         rb.velocity = steeringOutput.LinearVelocity;
+        rb.angularVelocity = new Vector3(rb.angularVelocity.x, rb.angularVelocity.y + steeringOutput.AngularVelocity, rb.angularVelocity.z);
     }
 }

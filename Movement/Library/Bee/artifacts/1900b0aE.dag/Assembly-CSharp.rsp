@@ -358,6 +358,7 @@
 "Assets/Scripts/Movement/Kinematic Movement Algorithms/KinematicArrival.cs"
 "Assets/Scripts/Movement/Kinematic Movement Algorithms/KinematicFlee.cs"
 "Assets/Scripts/Movement/Kinematic Movement Algorithms/KinematicSeek.cs"
+"Assets/Scripts/Movement/Kinematic Movement Algorithms/KinematicWander.cs"
 "Assets/Scripts/Movement/Kinematic Movement Algorithms/MovementAlgorithm.cs"
 "Assets/Scripts/Movement/Kinematic.cs"
 "Assets/Scripts/Movement/KinematicSteeringOutput.cs"

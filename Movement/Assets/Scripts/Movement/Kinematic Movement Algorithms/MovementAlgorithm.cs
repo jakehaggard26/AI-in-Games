@@ -2,13 +2,18 @@ using UnityEngine;
 
 public class MovementAlgorithm
 {
+    #region Variable(s)
     Transform character;
+    #endregion
 
+    #region Constructor(s)
     public MovementAlgorithm(Transform character)
     {
         this.character = character;
     }
+    #endregion
 
+    #region Steering Methods to be Overridden
     public virtual KinematicSteeringOutput getSteering(Transform target, Transform character)
     {
         KinematicSteeringOutput result = new KinematicSteeringOutput();
@@ -16,10 +21,19 @@ public class MovementAlgorithm
         return result;
     }
 
+    public virtual KinematicSteeringOutput getSteering(Transform character)
+    {
+        KinematicSteeringOutput result = new KinematicSteeringOutput();
+
+        return result;
+    }
+    #endregion
+
+    #region Utility Methods that Can be Overridden
     public virtual void lookAtTarget(Vector3 direction)
     {
         Quaternion rotation = Quaternion.LookRotation(direction);
-		character.rotation = Quaternion.Lerp(character.rotation, rotation, character.GetComponent<AgentController>().RotationSpeed * Time.deltaTime);
+        character.rotation = Quaternion.Lerp(character.rotation, rotation, character.GetComponent<AgentController>().RotationSpeed * Time.deltaTime);
     }
 
     public virtual float newOrientation(float current, Vector3 velocity)
@@ -56,6 +70,11 @@ public class MovementAlgorithm
 
         return angularVelocity;
     }
-    
+
+    public virtual float generateRandomBinomial()
+    {
+        return Random.Range(0.0f, 1.0f) - Random.Range(0.0f, 1.0f);
+    }
+    #endregion
 
 }
