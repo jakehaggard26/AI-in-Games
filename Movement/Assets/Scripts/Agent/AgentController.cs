@@ -55,7 +55,7 @@ public class AgentController : MonoBehaviour
         rb = this.GetComponent<Rigidbody>();
         kinematic = this.GetComponent<Kinematic>();
 
-        movementAlgorithm = new KinematicFlee(this.transform);
+        movementAlgorithm = new KinematicSeek(this.transform);
     }
 
     // Update is called once per frame
