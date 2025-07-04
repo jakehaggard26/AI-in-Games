@@ -122,6 +122,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &18111775 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 464294353973886481, guid: 37ab6ac8ba594ed41bad7cad6c365135, type: 3}
+  m_PrefabInstance: {fileID: 3916991305526508228}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,6 +478,22 @@ PrefabInstance:
     - target: {fileID: 1912044464680193950, guid: 451817adde2d5644daa5e5cfc97b72fa, type: 3}
       propertyPath: m_Name
       value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 7917690866227531677, guid: 451817adde2d5644daa5e5cfc97b72fa, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7917690866227531677, guid: 451817adde2d5644daa5e5cfc97b72fa, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 18111775}
+    - target: {fileID: 7917690866227531677, guid: 451817adde2d5644daa5e5cfc97b72fa, type: 3}
+      propertyPath: rotationSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8698175944141685094, guid: 451817adde2d5644daa5e5cfc97b72fa, type: 3}
+      propertyPath: m_Constraints
+      value: 84
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
