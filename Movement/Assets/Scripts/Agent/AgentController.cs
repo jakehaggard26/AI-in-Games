@@ -9,6 +9,8 @@ public class AgentController : MonoBehaviour
     [SerializeField] private Transform target;
     [SerializeField] private float speed;
     [SerializeField] private float rotationSpeed;
+    [SerializeField] private float radiusOfSatisfaction;
+    [SerializeField] private float timeToTarget;
 
     private KinematicSteeringOutput steeringOutput;
 
@@ -25,6 +27,18 @@ public class AgentController : MonoBehaviour
     public float RotationSpeed
     {
         get { return this.rotationSpeed; }   
+    }
+
+    public float RadiusOfSatisfaction
+    {
+        get { return this.radiusOfSatisfaction; }
+        set { this.radiusOfSatisfaction = value; }
+    }
+
+    public float TimeToTarget
+    {
+        get { return this.timeToTarget; }
+        set { this.timeToTarget = value; }
     }
 
     public Transform Target
@@ -55,7 +69,7 @@ public class AgentController : MonoBehaviour
         rb = this.GetComponent<Rigidbody>();
         kinematic = this.GetComponent<Kinematic>();
 
-        movementAlgorithm = new KinematicSeek(this.transform);
+        movementAlgorithm = new KinematicArrival(this.transform);
     }
 
     // Update is called once per frame

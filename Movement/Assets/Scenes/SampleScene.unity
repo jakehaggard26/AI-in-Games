@@ -348,7 +348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 464294353973886481, guid: 37ab6ac8ba594ed41bad7cad6c365135, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.7
+      value: 25.27
       objectReference: {fileID: 0}
     - target: {fileID: 464294353973886481, guid: 37ab6ac8ba594ed41bad7cad6c365135, type: 3}
       propertyPath: m_LocalRotation.w
@@ -377,6 +377,14 @@ PrefabInstance:
     - target: {fileID: 464294353973886481, guid: 37ab6ac8ba594ed41bad7cad6c365135, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112868883215965424, guid: 37ab6ac8ba594ed41bad7cad6c365135, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043801423257268183, guid: 37ab6ac8ba594ed41bad7cad6c365135, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9054984989738074927, guid: 37ab6ac8ba594ed41bad7cad6c365135, type: 3}
       propertyPath: m_Name
@@ -498,15 +506,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7917690866227531677, guid: 451817adde2d5644daa5e5cfc97b72fa, type: 3}
       propertyPath: speed
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7917690866227531677, guid: 451817adde2d5644daa5e5cfc97b72fa, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 18111775}
     - target: {fileID: 7917690866227531677, guid: 451817adde2d5644daa5e5cfc97b72fa, type: 3}
+      propertyPath: timeToTarget
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7917690866227531677, guid: 451817adde2d5644daa5e5cfc97b72fa, type: 3}
       propertyPath: rotationSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7917690866227531677, guid: 451817adde2d5644daa5e5cfc97b72fa, type: 3}
+      propertyPath: radiusOfSatisfaction
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8698175944141685094, guid: 451817adde2d5644daa5e5cfc97b72fa, type: 3}
       propertyPath: m_Constraints

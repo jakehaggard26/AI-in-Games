@@ -17,6 +17,7 @@ public class KinematicSteeringOutput
     public float AngularVelocity
     {
         get { return this.angularVelocity; }
+        set { this.angularVelocity = value; }
     }
     #endregion
 
