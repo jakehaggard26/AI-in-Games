@@ -1,8 +1,10 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class KinematicSeek : MovementAlgorithm
+public class KinematicFlee : MovementAlgorithm
 {
-    public KinematicSeek(Transform character) : base(character)
+    public KinematicFlee(Transform character) : base(character)
     {
 
     }
@@ -14,8 +16,8 @@ public class KinematicSeek : MovementAlgorithm
         if (target == null) { return result; }
 
 
-        // Get the direction to the target
-        result.LinearVelocity = target.position - character.position;
+        // Get the direction away from the target
+        result.LinearVelocity = character.position - target.position;
 
         // Go in that direction at full speed
         result.LinearVelocity.Normalize();
@@ -29,6 +31,4 @@ public class KinematicSeek : MovementAlgorithm
 
         return result;
     }
-    
-
 }
