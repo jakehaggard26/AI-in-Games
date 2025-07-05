@@ -12,6 +12,8 @@ public class AgentController : MonoBehaviour
     [SerializeField] private float radiusOfSatisfaction;
     [SerializeField] private float timeToTarget;
 
+    [SerializeField] private Path path;
+
     private KinematicSteeringOutput steeringOutput;
 
     private Rigidbody rb;
@@ -61,6 +63,11 @@ public class AgentController : MonoBehaviour
     {
         get { return this.movementAlgorithm; }
     }
+
+    public Path Path
+    {
+        get { return this.path; }
+    }
     #endregion
 
     // Start is called before the first frame update
@@ -69,7 +76,8 @@ public class AgentController : MonoBehaviour
         rb = this.GetComponent<Rigidbody>();
         kinematic = this.GetComponent<Kinematic>();
 
-        movementAlgorithm = new KinematicWander(this.transform);
+        steeringOutput = new KinematicSteeringOutput();
+        movementAlgorithm = new PathFollowing(this.transform);
     }
 
     // Update is called once per frame

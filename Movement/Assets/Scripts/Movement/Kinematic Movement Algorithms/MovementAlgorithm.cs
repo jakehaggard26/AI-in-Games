@@ -21,6 +21,13 @@ public class MovementAlgorithm
         return result;
     }
 
+    public virtual KinematicSteeringOutput getSteering(Vector3 target, Transform character)
+    {
+        KinematicSteeringOutput result = new KinematicSteeringOutput();
+
+        return result;
+    }
+
     public virtual KinematicSteeringOutput getSteering(Transform character)
     {
         KinematicSteeringOutput result = new KinematicSteeringOutput();

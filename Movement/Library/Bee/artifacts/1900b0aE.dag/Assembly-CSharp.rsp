@@ -362,6 +362,9 @@
 "Assets/Scripts/Movement/Kinematic Movement Algorithms/MovementAlgorithm.cs"
 "Assets/Scripts/Movement/Kinematic.cs"
 "Assets/Scripts/Movement/KinematicSteeringOutput.cs"
+"Assets/Scripts/Path Following/Path.cs"
+"Assets/Scripts/Path Following/PathFollowing.cs"
+"Assets/Scripts/Path Following/PathNode.cs"
 -langversion:9.0
 /deterministic
 /optimize+
