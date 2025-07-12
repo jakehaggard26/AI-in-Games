@@ -31,12 +31,24 @@ public class PathFollowing : KinematicSeek
         // Find closest position on the path
         currentParam = path.getParameter(character.position, currentParam);
 
+        // Get next position from the current position & Check if its the last node in the path
+        if (currentParam == path.getPath().Length - 1)
+        {
+            currentParam = 0;
+        }
+        else
+        {
+            currentParam++;
+        }
+
         // Set target + Offset Position
         Vector3 target = path.getPosition(currentParam) + new Vector3(Random.Range(0, pathOffset), 0f ,Random.Range(0f, pathOffset));
 
-        Debug.Log("Path Following Parameter: " + currentParam);
+        Debug.Log("Path Following Parameter: " + currentParam + "\tDistance: " + Vector3.Distance(path.getPosition(currentParam), character.position));
+        Debug.DrawLine(path.getPosition(currentParam), character.position, Color.white);
         Debug.Log("Path Following Target: " + target);
 
+        // return base.getSteering(target, character);
         return base.getSteering(target, character);
     }
 }

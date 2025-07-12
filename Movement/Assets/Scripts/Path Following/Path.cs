@@ -1,3 +1,6 @@
+// WIP
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -6,10 +9,16 @@ public class Path : MonoBehaviour
 
     private PathNode[] path;
 
+    public PathNode[] getPath()
+    {
+        return this.path;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        path = FindObjectsOfType<PathNode>();
+        path = FindObjectsOfType<PathNode>().OrderBy(node => node.getNumberInName()).ToArray();
+        Debug.Log(path);
 
         for (int i = 0; i < path.Length; i++)
         {
@@ -27,34 +36,34 @@ public class Path : MonoBehaviour
     {
         int param = lastParam;
         float minDistance = Mathf.Infinity;
+        float dist = 0f;
 
         // Reference for C# Array Slicing: https://stackoverflow.com/questions/406485/array-slices-in-c-sharp
         // PathNode[] coherence = @path[(param - 3)..(param - 1)];
         // coherence.Concat(@path[(param + 1)..(param + 3)]);
 
-        // Get a subset of nodes around 'param', wrapping around the array if needed
-        int subsetSize = 3;
-        PathNode[] coherence = new PathNode[subsetSize];
-        int pathLength = path.Length;
-        for (int i = 0; i < subsetSize; i++)
+        // Get nodes beyond our current node
+        List<PathNode> coherenceList = new List<PathNode>();
+        int start = Mathf.Max(0, param - 2);
+        int end = Mathf.Min(path.Length - 1, param + 2);
+
+        for (int i = start; i <= end; i++)
         {
-            // Skip the current param itself
-            int idx = (param + i) % pathLength;
-            coherence[i] = path[idx];
+            coherenceList.Add(path[i]);
         }
 
-
-        // Finds closest path node that is "near" the latest param
-        foreach (PathNode p in coherence)
+        // foreach (PathNode c in coherence)
+        foreach (PathNode c in coherenceList)
         {
-            if (lastParam == p.parameter) { continue; }
-            if (Vector3.Distance(position, p.transform.position) < minDistance)
-            {
-                minDistance = Vector3.Distance(position, p.transform.position);
-                param = p.parameter;
-            }
+            dist = Vector3.Distance(position, c.transform.position);
 
-            break;
+            if (dist < minDistance)
+            {
+                Debug.Log("Old Min: " + minDistance);
+                Debug.Log("New Min: " + dist);
+                param = c.parameter;
+                minDistance = dist;
+            }
         }
         
         return param;
