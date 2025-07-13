@@ -18,13 +18,10 @@ public class Path : MonoBehaviour
     void Start()
     {
         path = FindObjectsOfType<PathNode>().OrderBy(node => node.getNumberInName()).ToArray();
-        // Debug.Log(path);
-        // Debug.Log(path.Length);
 
         for (int i = 0; i < path.Length; i++)
         {
             path[i].parameter = i;
-            // Debug.Log(i + ": " + path[i].parameter);
         }
     }
 
@@ -62,12 +59,9 @@ public class Path : MonoBehaviour
         foreach (PathNode c in coherence)
         {
             dist = Vector3.Distance(position, c.transform.position);
-            // Debug.Log("********\t" + c.getNumberInName() + "\t********");
 
             if (dist < minDistance)
             {
-                Debug.Log("Old Min: " + minDistance);
-                Debug.Log("New Min: " + dist);
                 param = c.parameter;
                 minDistance = dist;
             }
