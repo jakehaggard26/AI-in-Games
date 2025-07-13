@@ -35,7 +35,9 @@ public class KinematicArrival : MovementAlgorithm
             direction *= character.GetComponent<AgentController>().Speed;
         }
 
-        lookAtTarget(target.position);
+        lookAtTarget(direction);
+
+        Debug.DrawLine(target.position, character.position, Color.red);
 
         result.LinearVelocity = direction;
         result.AngularVelocity = 0f;

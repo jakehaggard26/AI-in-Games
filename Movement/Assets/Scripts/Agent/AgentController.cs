@@ -62,6 +62,7 @@ public class AgentController : MonoBehaviour
     public MovementAlgorithm MovementAlgorithm
     {
         get { return this.movementAlgorithm; }
+        set { this.movementAlgorithm = value; }
     }
 
     public Path Path
@@ -76,16 +77,16 @@ public class AgentController : MonoBehaviour
         rb = this.GetComponent<Rigidbody>();
         kinematic = this.GetComponent<Kinematic>();
 
-        steeringOutput = new KinematicSteeringOutput();
-        movementAlgorithm = new PathFollowing(this.transform);
+        // steeringOutput = new KinematicSteeringOutput();
+        // movementAlgorithm = new PathFollowing(this.transform);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        steeringOutput = movementAlgorithm.getSteering(this.transform);
+        // steeringOutput = movementAlgorithm.getSteering(this.transform);
         
-        rb.velocity = steeringOutput.LinearVelocity;
-        rb.angularVelocity = new Vector3(rb.angularVelocity.x, rb.angularVelocity.y + steeringOutput.AngularVelocity, rb.angularVelocity.z);
+        // rb.velocity = steeringOutput.LinearVelocity;
+        // rb.angularVelocity = new Vector3(rb.angularVelocity.x, rb.angularVelocity.y + steeringOutput.AngularVelocity, rb.angularVelocity.z);
     }
 }

@@ -23,6 +23,9 @@ public class KinematicWander : MovementAlgorithm
         rotation = generateRandomBinomial() * character.GetComponent<AgentController>().RotationSpeed; 
         Debug.Log(generateRandomBinomial());
 
+        
+        Debug.DrawLine(character.position, character.position + direction, Color.red);
+
         result.LinearVelocity = direction;
         result.AngularVelocity = rotation;
 

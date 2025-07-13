@@ -21,7 +21,10 @@ public class AgentController_Editor : Editor
         string message = "";
         message += "Agent Traits\n--------------------------------------------\n";
         message += "Agent Name: " + agent.gameObject.name + "\n";
-        message += "Target Position: " + agent.Target.position + "\n";
+        if (agent.Target != null)
+        {
+            message += "Target Position: " + agent.Target.position + "\n";
+        }
         message += "Agent Position: " + agent.transform.position + "\n";
         message += "Agent Speed: " + agent.Speed + "\n";
         message += "Agent Rotation Speed: " + agent.RotationSpeed + "\n";

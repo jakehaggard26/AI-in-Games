@@ -26,10 +26,10 @@ public class KinematicFlee : MovementAlgorithm
         lookAtTarget(direction);
 
         // For testing: Draw line to target
-        Debug.DrawLine(character.position, target.position, Color.red);
+        Debug.DrawLine(character.position, target.position, Color.blue);
 
         // For testing: Draw line to calculated direction
-        Debug.DrawLine(character.position, character.position + direction, Color.blue);
+        Debug.DrawLine(character.position, character.position + direction, Color.red);
 
         // Store direction in Steering Output
         result.LinearVelocity = direction;
