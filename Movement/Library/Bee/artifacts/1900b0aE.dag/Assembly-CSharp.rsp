@@ -355,6 +355,7 @@
 -analyzer:"D:/Program Files/Unity/Hub/Editor/2022.3.62f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Examples/Scripts/KinematicMovementExample.cs"
 "Assets/Examples/Scripts/PathFollowingExample.cs"
+"Assets/Examples/Scripts/Separation Example.cs"
 "Assets/Scripts/Agent/AgentController.cs"
 "Assets/Scripts/Agent/AgentController_Editor.cs"
 "Assets/Scripts/Movement/Kinematic Movement Algorithms/KinematicArrival.cs"
@@ -367,6 +368,7 @@
 "Assets/Scripts/Path Following/Path.cs"
 "Assets/Scripts/Path Following/PathFollowing.cs"
 "Assets/Scripts/Path Following/PathNode.cs"
+"Assets/Scripts/Separation/Separation.cs"
 -langversion:9.0
 /deterministic
 /optimize+

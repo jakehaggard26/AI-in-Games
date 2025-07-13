@@ -3,7 +3,7 @@ using UnityEngine;
 public class MovementAlgorithm
 {
     #region Variable(s)
-    Transform character;
+    protected Transform character;
     #endregion
 
     #region Constructor(s)

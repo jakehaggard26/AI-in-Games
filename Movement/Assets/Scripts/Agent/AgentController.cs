@@ -11,8 +11,17 @@ public class AgentController : MonoBehaviour
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float radiusOfSatisfaction;
     [SerializeField] private float timeToTarget;
+    [SerializeField] private float maxAcceleration;
 
     [SerializeField] private Path path;
+
+
+
+    [Tooltip("Threshold for taking action.")]
+    [SerializeField] private float threshold;
+
+    [Tooltip("Constant Decay Coefficient for the Inverse Square Law")]
+    [SerializeField] private float decayCoefficient;
 
     private KinematicSteeringOutput steeringOutput;
 
@@ -21,6 +30,18 @@ public class AgentController : MonoBehaviour
     private MovementAlgorithm movementAlgorithm;
 
     #region Properties
+    public float Threshold
+    {
+        get { return this.threshold; }
+        set { this.threshold = value; }
+    }
+
+    public float DecayCoefficient
+    {
+        get { return this.decayCoefficient; }
+        set { this.decayCoefficient = value; }
+    }
+
     public float Speed
     {
         get { return this.speed; }
@@ -68,6 +89,12 @@ public class AgentController : MonoBehaviour
     public Path Path
     {
         get { return this.path; }
+    }
+
+    public float MaxAcceleration
+    {
+        get { return this.maxAcceleration; }
+        set { this.maxAcceleration = value; }
     }
     #endregion
 
