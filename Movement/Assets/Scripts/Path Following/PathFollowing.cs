@@ -31,6 +31,9 @@ public class PathFollowing : KinematicSeek
         // Find closest position on the path
         currentParam = path.getParameter(character.position, currentParam);
 
+        int priorParam = currentParam;
+
+        // Get next position wrt to the closest position on the path
         if (currentParam >= path.getPath().Length - 1)
         {
             currentParam = 0;
@@ -46,6 +49,11 @@ public class PathFollowing : KinematicSeek
         Debug.Log("Path Following Parameter: " + currentParam + "\tDistance: " + Vector3.Distance(path.getPosition(currentParam), character.position));
         Debug.DrawLine(path.getPosition(currentParam), character.position, Color.white);
         Debug.Log("Path Following Target: " + target);
+
+        if(priorParam > 0 && currentParam == 0)
+        {
+            Application.Quit();
+        }
 
         // return base.getSteering(target, character);
         return base.getSteering(target, character);

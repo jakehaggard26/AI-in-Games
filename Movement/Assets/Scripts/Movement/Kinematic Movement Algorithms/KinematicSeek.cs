@@ -24,7 +24,7 @@ public class KinematicSeek : MovementAlgorithm
         lookAtTarget(direction);
 
         // For testing: Draw line to target
-        Debug.DrawLine(character.position, target.position, Color.red);
+        // Debug.DrawLine(character.position, target.position, Color.red);
 
         // Store direction in Steering Output
         result.LinearVelocity = direction;
@@ -49,7 +49,7 @@ public class KinematicSeek : MovementAlgorithm
         lookAtTarget(direction);
 
         // For testing: Draw line to target
-        Debug.DrawLine(character.position, target, Color.red);
+        // Debug.DrawLine(character.position, target, Color.red);
 
         // Store direction in Steering Output
         result.LinearVelocity = direction;

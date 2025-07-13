@@ -40,22 +40,26 @@ public class Path : MonoBehaviour
         float minDistance = Mathf.Infinity;
         float dist = 0f;
 
-        // Reference for C# Array Slicing: https://stackoverflow.com/questions/406485/array-slices-in-c-sharp
-        // PathNode[] coherence = @path[(param - 3)..(param - 1)];
-        // coherence.Concat(@path[(param + 1)..(param + 3)]);
 
-        // Get nodes beyond our current node
-        List<PathNode> coherenceList = new List<PathNode>();
-        int start = Mathf.Max(0, param - 2);
-        int end = Mathf.Min(path.Length - 1, param + 2);
+        int pathLength = path.Length;
+        if (lastParam < 0 || lastParam >= pathLength)
+            lastParam = 0;
 
-        for (int i = start; i <= end; i++)
+        // Define how many nodes to check on either side of lastParam
+        int window = 2;
+
+
+        List<PathNode> coherence = new List<PathNode>();
+
+        // From our last parameter n, we look at n-2,n-1,n,n+1,n+2
+        for (int offset = -window; offset <= window; offset++)
         {
-            coherenceList.Add(path[i]);
+            // Slices the collection in a circular manner
+            int idx = (lastParam + offset + pathLength) % pathLength;
+            coherence.Add(path[idx]);
         }
 
-        // foreach (PathNode c in coherence)
-        foreach (PathNode c in coherenceList)
+        foreach (PathNode c in coherence)
         {
             dist = Vector3.Distance(position, c.transform.position);
             // Debug.Log("********\t" + c.getNumberInName() + "\t********");
