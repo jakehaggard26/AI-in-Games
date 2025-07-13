@@ -31,8 +31,7 @@ public class PathFollowing : KinematicSeek
         // Find closest position on the path
         currentParam = path.getParameter(character.position, currentParam);
 
-        // Get next position from the current position & Check if its the last node in the path
-        if (currentParam == path.getPath().Length - 1)
+        if (currentParam >= path.getPath().Length - 1)
         {
             currentParam = 0;
         }
