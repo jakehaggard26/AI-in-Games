@@ -45,6 +45,7 @@ public class AgentController : MonoBehaviour
     public float Speed
     {
         get { return this.speed; }
+        set { this.speed = value; }
     }
 
     public float RotationSpeed

@@ -20,6 +20,7 @@ public class Separation : MovementAlgorithm
         if (agent.DecayCoefficient <= 0) agent.DecayCoefficient = 0.5f;
     }
 
+
     public override KinematicSteeringOutput getSteering(Transform character)
     {
         KinematicSteeringOutput result = new KinematicSteeringOutput();
@@ -39,11 +40,13 @@ public class Separation : MovementAlgorithm
             direction = character.position - target.transform.position;
             distance = direction.magnitude;
 
-            if (distance < agent.Threshold)
+            // https://docs.unity3d.com/ScriptReference/Bounds-size.html
+            if (distance < agent.Threshold + agent.GetComponent<CapsuleCollider>().bounds.size.x)
             {
                 Debug.Log(character.gameObject.name + " is avoiding " + target.gameObject.name);
 
                 // Calculate strength of repulsion aka separation
+                // A higher decay coefficient = A stronger separation strength, the opposite is true for a smaller decayCoefficient
                 strength = Mathf.Min(agent.DecayCoefficient / (distance * distance), agent.MaxAcceleration);
 
                 Debug.Log(agent.gameObject.name + "'s Calculation: " + agent.DecayCoefficient / (distance * distance));
@@ -51,7 +54,6 @@ public class Separation : MovementAlgorithm
                 direction.Normalize();
                 result.LinearVelocity = strength * direction;
             }
-
         }
 
         return result;
