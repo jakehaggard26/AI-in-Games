@@ -11,6 +11,7 @@ public class AgentController : MonoBehaviour
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float radiusOfSatisfaction;
     [SerializeField] private float timeToTarget;
+    [SerializeField] private float maxPredictionTime;
     [SerializeField] private float maxAcceleration;
 
     [SerializeField] private Path path;
@@ -63,6 +64,12 @@ public class AgentController : MonoBehaviour
     {
         get { return this.timeToTarget; }
         set { this.timeToTarget = value; }
+    }
+
+    public float MaxPredictionTime
+    {
+        get { return this.maxPredictionTime; }
+        set { this.maxPredictionTime = value; }
     }
 
     public Transform Target

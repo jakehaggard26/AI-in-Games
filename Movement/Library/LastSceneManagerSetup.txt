@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Examples/Scenes/Separation Example.unity
+- path: Assets/Examples/Scenes/Kinematic Movement Example.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -8,6 +8,7 @@ public class KinematicMovementExample : MonoBehaviour
     public bool isSeek;
     public bool isFlee;
     public bool isWander;
+    public bool isPursue;
     private AgentController agent;
 
     // Start is called before the first frame update
@@ -19,6 +20,7 @@ public class KinematicMovementExample : MonoBehaviour
         else if (isSeek) agent.MovementAlgorithm = new KinematicSeek(agent.transform);
         else if (isFlee) agent.MovementAlgorithm = new KinematicFlee(agent.transform);
         else if (isWander) agent.MovementAlgorithm = new KinematicWander(agent.transform);
+        else if (isPursue) agent.MovementAlgorithm = new KinematicPursue(agent.transform);
         else return;
     }
 
@@ -49,6 +51,14 @@ public class KinematicMovementExample : MonoBehaviour
 
         else if (isFlee)
         {
+            KinematicSteeringOutput result = agent.MovementAlgorithm.getSteering(agent.Target, agent.transform);
+            agent.Rigidbody.velocity = result.LinearVelocity;
+            agent.Rigidbody.angularVelocity = new Vector3(agent.Rigidbody.angularVelocity.x, result.AngularVelocity, agent.Rigidbody.angularVelocity.y);
+        }
+
+        else if (isPursue)
+        {
+            // Debug.Log("Pursuing");
             KinematicSteeringOutput result = agent.MovementAlgorithm.getSteering(agent.Target, agent.transform);
             agent.Rigidbody.velocity = result.LinearVelocity;
             agent.Rigidbody.angularVelocity = new Vector3(agent.Rigidbody.angularVelocity.x, result.AngularVelocity, agent.Rigidbody.angularVelocity.y);

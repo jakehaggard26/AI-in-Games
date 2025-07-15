@@ -6,7 +6,6 @@ public class PathFollowing : KinematicSeek
     private float pathOffset = 0f;
     private int currentParam = 0;
     private Path path;
-    private Transform character;
 
     public PathFollowing(Transform character) : base(character)
     {
