@@ -360,6 +360,7 @@
 "Assets/Scripts/Agent/AgentController.cs"
 "Assets/Scripts/Agent/AgentController_Editor.cs"
 "Assets/Scripts/Movement/Kinematic Movement Algorithms/KinematicArrival.cs"
+"Assets/Scripts/Movement/Kinematic Movement Algorithms/KinematicEvade.cs"
 "Assets/Scripts/Movement/Kinematic Movement Algorithms/KinematicFlee.cs"
 "Assets/Scripts/Movement/Kinematic Movement Algorithms/KinematicPursue.cs"
 "Assets/Scripts/Movement/Kinematic Movement Algorithms/KinematicSeek.cs"

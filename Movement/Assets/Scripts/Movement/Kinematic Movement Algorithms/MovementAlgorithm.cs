@@ -18,6 +18,8 @@ public class MovementAlgorithm
     {
         KinematicSteeringOutput result = new KinematicSteeringOutput();
 
+        Debug.Log("In MovementAlgorithm.cs");
+
         return result;
     }
 
@@ -25,12 +27,16 @@ public class MovementAlgorithm
     {
         KinematicSteeringOutput result = new KinematicSteeringOutput();
 
+        Debug.Log("In MovementAlgorithm.cs");
+
         return result;
     }
 
     public virtual KinematicSteeringOutput getSteering(Transform character)
     {
         KinematicSteeringOutput result = new KinematicSteeringOutput();
+
+        Debug.Log("In MovementAlgorithm.cs");
 
         return result;
     }
